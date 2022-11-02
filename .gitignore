@@ -8,3 +8,5 @@ snapshots/
 correspondence.json
 *.log
 val_seg/
+/0
+/data/WikiScenes
