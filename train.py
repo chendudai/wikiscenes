@@ -109,7 +109,7 @@ class DecTrainer(BaseTrainer):
             self.valloader = None
 
         if self.export_task == "None" or self.export_set == "val_easy":
-            self.valloader_easy = get_dataloader(args, cfg, "val_easy")
+            self.valloader_easy = get_dataloader(args, cfg, "val_easy") 
         else:
             self.valloader_easy = None
 
