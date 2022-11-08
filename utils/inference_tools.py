@@ -2,7 +2,7 @@ import os
 import torch
 import numpy as np
 import scipy.misc
-
+import pickle
 import torch.nn.functional as F
 
 from PIL import Image
@@ -75,6 +75,12 @@ class ResultWriter:
             # overlay255 = np.round(overlay * 255.).astype(np.uint8)
             # scipy.misc.imsave(filepath, overlay255)
             pred = pred.astype(np.uint8)
+
+            pred_path_raw = os.path.join(self.root, "raw", img_name + '_pred_raw.pkl')
+
+            with open(pred_path_raw, 'wb') as file:
+                pickle.dump(pred, file)
+
             pred_crf = pred_crf.astype(np.uint8)
             mask_gt = gt_mask.numpy().astype(np.uint8)
             img_orig_ = np.transpose(img_orig, [1,2,0])
@@ -82,6 +88,7 @@ class ResultWriter:
             image2 = img_orig_ + 0.01 - 0.01
             image3 = img_orig_ + 0.01 - 0.01
             pred_o = self._mask_overlay(pred, image1)
+
             pred_crf_o = self._mask_overlay(pred_crf, image2)
             # mask_gt_o = self._mask_overlay(mask_gt, image3)
             pred_path = os.path.join(self.root, "vis", img_name + '_pred.png')

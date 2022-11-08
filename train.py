@@ -464,21 +464,21 @@ class DecTrainer(BaseTrainer):
                     heat[1] = (heat[1] - min_) / range_
                     heat[1] = 1.0 - heat[1]
 
-                    # put color
-                    colormap = [apply_colormap_on_image(raw[k], heat[k], 'jet') for k in [0,1]]
-
-                    # draw a cross
-                    green = (0, 255, 0)
-                    mark_size = 5
-                    for k in range(x - mark_size, x + 1 + mark_size):
-                        if 0 <= k < colormap[0].size[0]:
-                            colormap[0].putpixel((k, y), green)
-                    for k in range(y - mark_size, y + 1 + mark_size):
-                        if 0 <= k < colormap[0].size[1]:
-                            colormap[0].putpixel((x, k), green)
-                    colormap = [transforms.ToTensor()(colormap[k]) for k in [0,1]]
-                    colormaps.append(colormap)
-        self.write_image(colormaps, epoch)
+        #             # put color
+        #             colormap = [apply_colormap_on_image(raw[k], heat[k], 'jet') for k in [0,1]]
+        #
+        #             # draw a cross
+        #             green = (0, 255, 0)
+        #             mark_size = 5
+        #             for k in range(x - mark_size, x + 1 + mark_size):
+        #                 if 0 <= k < colormap[0].size[0]:
+        #                     colormap[0].putpixel((k, y), green)
+        #             for k in range(y - mark_size, y + 1 + mark_size):
+        #                 if 0 <= k < colormap[0].size[1]:
+        #                     colormap[0].putpixel((x, k), green)
+        #             colormap = [transforms.ToTensor()(colormap[k]) for k in [0,1]]
+        #             colormaps.append(colormap)
+        # self.write_image(colormaps, epoch)
         self.count_acc(targets_all, preds_all, related_all, self.writer, epoch)
 
         # visualising
@@ -812,7 +812,9 @@ class DecTrainer(BaseTrainer):
             if writer is not None:
                 writer.add_scalar('%02d_%s/AP' % (ni + offset, className), aps[ni], epoch)
                 if not self.multi_label:
-                    writer.add_scalar('%02d_%s/acc' % (ni + offset, className), cm_d[ni], epoch)
+                    pass
+                    # writer.add_scalar('%02d_%s/acc' % (ni + offset, className), cm_d[ni], epoch)
+
             # ap_ = "AP_{}: {:4.3f}".format(className, aps[ni])
             # if not multi_label:
             #     acc_ = ", acc_{}: {:4.3f}".format(className, cm_d[ni])

@@ -386,7 +386,7 @@ def network_factory(cfg):
             def __init__(self, config, pre_weights=None, num_classes=21, dropout=True):
                 super().__init__()
                 self.cfg = config
-
+                # self.out_feature = []
                 def hook(module, input, output):
                     self.out_feature = output
 

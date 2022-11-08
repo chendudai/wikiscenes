@@ -40,13 +40,13 @@ def load_dataset(root, _split_f, corr):
             else:
                 keypoints.append(None)
             _image = os.path.join(root, _image)
-            assert os.path.isfile(_image), '%s not found' % _image
-            # if os.path.isfile(_image):
-            images.append(_image)
-            labels.append([x.strip("',") for x in label.strip("[]").split()])
-            captions.append(caption)
-            tags_list.append(tags)
-            count += 1
+            # assert os.path.isfile(_image), '%s not found' % _image
+            if os.path.isfile(_image):
+                images.append(_image)
+                labels.append([x.strip("',") for x in label.strip("[]").split()])
+                captions.append(caption)
+                tags_list.append(tags)
+                count += 1
 
     print("Filtering")
     image_graph = dict()
@@ -176,6 +176,8 @@ class WikiSegmentation_corr(WikiScenes_corr):
         for c in classes:
             counter[c] = list()
         for i in self.image_graph:
+            if i >= len(self.labels):
+                continue
             for label in self.labels[i]:
                 counter[label].append(len(self.image_graph[i]))
         for label in counter:
