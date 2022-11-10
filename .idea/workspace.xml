@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3571c351-1e84-4d17-9bf7-a6c1720e6e15" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/data/train_10classes_20639_63landmark_balanced.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/train_10classes_20639_63landmark_balanced.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/wikiscenes_corr.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/wikiscenes_corr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wikiscenes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wikiscenes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/pascal_voc_ms.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/pascal_voc_ms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infer_val.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer_val.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/infer_val_wikiscenes.sh" beforeDir="false" afterPath="$PROJECT_DIR$/launch/infer_val_wikiscenes.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launch/run_wikiscenes_resnet50.sh" beforeDir="false" afterPath="$PROJECT_DIR$/launch/run_wikiscenes_resnet50.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/stage_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/stage_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/inference_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/inference_tools.py" afterDir="false" />
     </list>
@@ -16,6 +23,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
     <envs>
@@ -44,12 +58,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "C:/Users/chen/Documents/TAU/Thesis/semantic_nerf",
+    "last_opened_file_path": "C:/Users/chen/Documents/TAU/Thesis/wikiscenes",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "web.server"
   }
 }]]></component>
   <component name="RunManager" selected="Python.infer_val">
@@ -59,6 +74,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="CUDA_VISIBLE_DEVICES" value="3" />
       </envs>
       <option name="SDK_HOME" value="/mnt/data/chendudai/conda/envs/wikiscenes/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -67,7 +83,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/infer_val.py" />
-      <option name="PARAMETERS" value="--dataset wikiscenes_corr --cfg configs/wiki_resnet50.yaml --exp final --run ours --resume e024Xs-0.800 --infer-list data/wikiscenes_val.txt --workers 0 --mask-output-dir ./logs/masks/wikiscenes_corr/final/ours" />
+      <option name="PARAMETERS" value="--dataset wikiscenes_corr --cfg configs/wiki_resnet50.yaml --exp final --run ours --resume e024Xs-0.800 --infer-list data/wikiscenes_test_0_1.txt --workers 0 --mask-output-dir ./logs/masks/wikiscenes_corr/final/chen" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="script_create_empty_masks" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="wikiscenes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script_create_empty_masks.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -98,12 +136,14 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.script_create_empty_masks" />
       <item itemvalue="Python.infer_val" />
       <item itemvalue="Python.train" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.infer_val" />
+        <item itemvalue="Python.script_create_empty_masks" />
         <item itemvalue="Python.train" />
       </list>
     </recent_temporary>
@@ -119,6 +159,7 @@
       <workItem from="1667326533558" duration="1478000" />
       <workItem from="1667377135078" duration="9427000" />
       <workItem from="1667390828826" duration="64205000" />
+      <workItem from="1667905940777" duration="25128000" />
     </task>
     <servers />
   </component>
@@ -173,11 +214,97 @@
           <line>467</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/datasets/__init__.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/datasets/pascal_voc_ms.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>164</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/inference_tools.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infer_val.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/datasets/pascal_voc_ms.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/wikiscenes$infer_val.coverage" NAME="infer_val Coverage Results" MODIFIED="1667820732406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wikiscenes$script_create_empty_masks.coverage" NAME="script_create_empty_masks Coverage Results" MODIFIED="1667980602951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wikiscenes$infer_val.coverage" NAME="infer_val Coverage Results" MODIFIED="1667996063333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/wikiscenes$train.coverage" NAME="train Coverage Results" MODIFIED="1667814165632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
