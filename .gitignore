@@ -10,3 +10,7 @@ correspondence.json
 val_seg/
 /0
 /data/WikiScenes
+*.jpg
+*.tif
+*.jpeg
+*.png
