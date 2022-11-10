@@ -77,6 +77,11 @@ class VOC12ClsDataset(VOC12ImageDataset):
         mask = Image.open(os.path.join(self.voc12_root, label_fullpath))
         mask = np.array(mask)
 
+        mask_size = np.shape(mask)
+        mask = np.zeros((mask_size[0], mask_size[1]))
+        mask[0][0] = 1
+        mask = np.array(mask)
+
         labels = torch.zeros(self.NUM_CLASS - 1)
 
         # it will also be sorted

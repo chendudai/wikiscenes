@@ -76,11 +76,6 @@ class ResultWriter:
             # scipy.misc.imsave(filepath, overlay255)
             pred = pred.astype(np.uint8)
 
-            pred_path_raw = os.path.join(self.root, "raw", img_name + '_pred_raw.pkl')
-
-            with open(pred_path_raw, 'wb') as file:
-                pickle.dump(pred, file)
-
             pred_crf = pred_crf.astype(np.uint8)
             mask_gt = gt_mask.numpy().astype(np.uint8)
             img_orig_ = np.transpose(img_orig, [1,2,0])
@@ -100,6 +95,16 @@ class ResultWriter:
             scipy.misc.imsave(pred_path, pred_o)
             scipy.misc.imsave(crf_path, pred_crf_o)
             # scipy.misc.imsave(gt_path, mask_gt_o)
+
+
+
+            pred_path_raw = os.path.join(self.root, "pred", "regular", img_name + '_pred.pkl')
+            with open(pred_path_raw, 'wb') as file:
+                pickle.dump(pred, file)
+
+            pred_path_crf_raw = os.path.join(self.root, "pred", "crf", img_name + '_pred_crf.pkl')
+            with open(pred_path_crf_raw, 'wb') as file:
+                pickle.dump(pred_crf, file)
 
 class MergeMultiScale(ResultWriter):
 
